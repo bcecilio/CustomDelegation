@@ -7,16 +7,9 @@
 //
 
 import UIKit
-
-protocol TableViewDelegate: AnyObject {
-    func fontdidChange(_ tablView: ViewController, fonSize: CGFloat)
-}
-
 class ViewController: UIViewController {
-    
+ 
     @IBOutlet weak var tableView: UITableView!
-    
-    weak var delegate: TableViewDelegate?
     
     private var movieInfo = [Movies]() {
         didSet {
@@ -35,9 +28,7 @@ class ViewController: UIViewController {
         movieInfo = Movies.allMovies
     }
     
-//    func fontChanged() {
-//        delegate?.fontDidChange(self)
-//    }
+   
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

@@ -62,8 +62,8 @@
 			children = (
 				B734AFF523DF3D5200A08488 /* AppDelegate.swift */,
 				B734AFF723DF3D5200A08488 /* SceneDelegate.swift */,
-				B734AFF923DF3D5200A08488 /* ViewController.swift */,
 				B734B00B23DF46A800A08488 /* Movies.swift */,
+				B734AFF923DF3D5200A08488 /* ViewController.swift */,
 				B734B00923DF428400A08488 /* SettingsController.swift */,
 				B734AFFB23DF3D5200A08488 /* Main.storyboard */,
 				B734AFFE23DF3D5600A08488 /* Assets.xcassets */,

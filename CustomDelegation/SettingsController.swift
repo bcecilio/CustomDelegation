@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TableViewDelegate: AnyObject {
+    func fontdidChange(fonSize: CGFloat)
+}
+
 class SettingsController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -40,5 +44,12 @@ class SettingsController: UIViewController {
     
     @IBAction func stepperSteppedOn(_ sender: UIStepper) {
         
+    }
+}
+
+extension SettingsController: TableViewDelegate {
+    
+    func fontdidChange(fonSize: CGFloat) {
+        <#code#>
     }
 }
