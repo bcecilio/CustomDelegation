@@ -16,6 +16,8 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    var fontSize: CGFloat? = 17
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +29,14 @@ class ViewController: UIViewController {
     func loadData() {
         movieInfo = Movies.allMovies
     }
-    
-   
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource, TableViewDelegate {
+    func fontdidChange(fontSize: CGFloat) {
+        // change the font of cell labels
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieInfo.count
     }
@@ -44,7 +49,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailTextLabel?.text = movieCell.releaseDate
         return cell
     }
-    
-    
 }
 

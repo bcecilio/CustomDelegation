@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-Sc-TA9">
-                                <rect key="frame" x="18" y="237" width="378" height="31"/>
+                                <rect key="frame" x="18" y="236" width="378" height="31"/>
                                 <connections>
                                     <action selector="sliderSlided:" destination="59w-TI-PRY" eventType="valueChanged" id="NBE-v3-n0t"/>
                                 </connections>
@@ -91,28 +91,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2q6-5p-8dV">
-                                <rect key="frame" x="160" y="337" width="94" height="32"/>
+                                <rect key="frame" x="160" y="316" width="94" height="32"/>
                                 <connections>
                                     <action selector="stepperSteppedOn:" destination="59w-TI-PRY" eventType="valueChanged" id="FQL-4l-cQn"/>
                                 </connections>
                             </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gn-m0-3Q9">
+                                <rect key="frame" x="20" y="185" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dqV-Sc-TA9" firstAttribute="leading" secondItem="xgZ-r8-zEd" secondAttribute="leading" constant="20" id="52I-DS-ue2"/>
-                            <constraint firstItem="2q6-5p-8dV" firstAttribute="leading" secondItem="xgZ-r8-zEd" secondAttribute="leading" constant="160" id="JCE-dV-4zl"/>
-                            <constraint firstItem="xgZ-r8-zEd" firstAttribute="trailing" secondItem="2q6-5p-8dV" secondAttribute="trailing" constant="160" id="Jp8-fi-l7m"/>
-                            <constraint firstItem="2q6-5p-8dV" firstAttribute="top" secondItem="dqV-Sc-TA9" secondAttribute="bottom" constant="70" id="Tda-Qn-mGQ"/>
-                            <constraint firstItem="dqV-Sc-TA9" firstAttribute="top" secondItem="QKY-ld-RzG" secondAttribute="bottom" constant="60" id="WJG-CI-W89"/>
-                            <constraint firstItem="xgZ-r8-zEd" firstAttribute="trailing" secondItem="dqV-Sc-TA9" secondAttribute="trailing" constant="20" id="agN-0S-gzJ"/>
+                            <constraint firstItem="7gn-m0-3Q9" firstAttribute="leading" secondItem="xgZ-r8-zEd" secondAttribute="leading" constant="20" id="3Fo-nl-aNb"/>
+                            <constraint firstItem="2q6-5p-8dV" firstAttribute="leading" secondItem="xgZ-r8-zEd" secondAttribute="leading" constant="160" id="7Ij-Ff-hbR"/>
+                            <constraint firstItem="dqV-Sc-TA9" firstAttribute="top" secondItem="7gn-m0-3Q9" secondAttribute="bottom" constant="30" id="X0x-Yq-3ML"/>
+                            <constraint firstItem="xgZ-r8-zEd" firstAttribute="trailing" secondItem="2q6-5p-8dV" secondAttribute="trailing" constant="160" id="bDQ-nO-KUj"/>
+                            <constraint firstItem="dqV-Sc-TA9" firstAttribute="leading" secondItem="xgZ-r8-zEd" secondAttribute="leading" constant="20" id="bqQ-Ik-BVU"/>
                             <constraint firstItem="QKY-ld-RzG" firstAttribute="leading" secondItem="xgZ-r8-zEd" secondAttribute="leading" constant="20" id="dHP-kB-MJC"/>
                             <constraint firstItem="QKY-ld-RzG" firstAttribute="top" secondItem="xgZ-r8-zEd" secondAttribute="top" constant="60" id="h1g-lw-iZC"/>
+                            <constraint firstItem="xgZ-r8-zEd" firstAttribute="trailing" secondItem="7gn-m0-3Q9" secondAttribute="trailing" constant="20" id="lql-ky-Oev"/>
                             <constraint firstItem="xgZ-r8-zEd" firstAttribute="trailing" secondItem="QKY-ld-RzG" secondAttribute="trailing" constant="20" id="olz-ft-Yuc"/>
+                            <constraint firstItem="xgZ-r8-zEd" firstAttribute="trailing" secondItem="dqV-Sc-TA9" secondAttribute="trailing" constant="20" id="pwF-EZ-ycs"/>
+                            <constraint firstItem="7gn-m0-3Q9" firstAttribute="top" secondItem="QKY-ld-RzG" secondAttribute="bottom" constant="8" id="x1R-CO-Q3j"/>
+                            <constraint firstItem="2q6-5p-8dV" firstAttribute="top" secondItem="dqV-Sc-TA9" secondAttribute="bottom" constant="50" id="zBI-Xi-fsI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xgZ-r8-zEd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="L6y-tX-oTT"/>
                     <connections>
+                        <outlet property="fontSizeLabel" destination="7gn-m0-3Q9" id="PwU-rO-1aW"/>
                         <outlet property="fontSlider" destination="dqV-Sc-TA9" id="uZ2-xd-Rpf"/>
                         <outlet property="fontStepper" destination="2q6-5p-8dV" id="FTk-d8-Kaz"/>
                         <outlet property="titleLabel" destination="QKY-ld-RzG" id="aHR-ft-1RU"/>

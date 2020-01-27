@@ -9,21 +9,34 @@
 import UIKit
 
 protocol TableViewDelegate: AnyObject {
-    func fontdidChange(fonSize: CGFloat)
+    func fontdidChange(fontSize: CGFloat)
 }
 
 class SettingsController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var fontSizeLabel: UILabel!
     @IBOutlet weak var fontSlider: UISlider!
     @IBOutlet weak var fontStepper: UIStepper!
     
-    var fontSize: CGFloat? = 17
+    var fontSize: CGFloat? = 17 {
+        didSet {
+            delegate?.fontdidChange(fontSize: fontSize!)
+            self.fontSizeLabel.text = "Font Size: \(String(format: "%0.f", fontSize!))"
+            fontSlider.value = Float(fontSize!)
+            fontStepper.value = Double(fontSize!)
+        }
+    }
+    
+    weak var delegate: TableViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fontSizeLabel.text = "Font Size: 17"
         configureSlider()
         configureStepper()
+        fontSlider.value = Float(CGFloat(fontSize!))
+        fontStepper.value = Double(CGFloat(fontSize!))
     }
     
     func configureSlider() {
@@ -39,17 +52,10 @@ class SettingsController: UIViewController {
     }
     
     @IBAction func sliderSlided(_ sender: UISlider) {
-        
+        fontSize = CGFloat(sender.value)
     }
     
     @IBAction func stepperSteppedOn(_ sender: UIStepper) {
-        
-    }
-}
-
-extension SettingsController: TableViewDelegate {
-    
-    func fontdidChange(fonSize: CGFloat) {
-        <#code#>
+        fontSize = CGFloat(sender.value)
     }
 }
